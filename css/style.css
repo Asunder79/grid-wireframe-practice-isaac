@@ -1,0 +1,46 @@
+@import url(./reset.css);
+
+body{
+display:grid;
+grid-template-columns: 1fr;
+grid-template-rows: repeat(5, 1fr);
+gap: 10px;
+}
+
+.header{
+background-color:crimson;
+text-align:center;
+font-size:larger;
+}
+
+.aside{
+background-color:cadetblue;
+text-align:center;
+font-size:larger;
+}
+
+.main-content{
+display:grid;
+grid-template-columns: 1fr;
+grid-template-rows: repeat(3, 1fr);
+background-color:aquamarine;
+text-align:center;
+font-size:larger;
+gap: 10px;
+}
+
+.content-item{
+background-color:red;
+text-align:center;
+font-size:larger;
+}
+.aside-2{
+background-color:aqua;
+text-align:center;
+font-size:larger;
+}
+.footer{
+background-color:orange;
+text-align:center;
+font-size:larger;
+}
