@@ -1,15 +1,14 @@
 @import url(./reset.css);
 
 body{
-display:grid;
+display:grid; /*Main display which contains the article and all wrappers*/
 grid-template-columns: 1fr;
-grid-template-rows: repeat(5, 1fr);
+grid-template-rows: repeat(5, 1fr); /*Five rows, for at the most narrow displays, it should have five rows for all five children*/
 gap: 10px;
 }
+/*Grandchildren will be handled by the childrens own grid displays, rows and columns*/
 
-.header, .footer {
-    background-color: #333;
-    color: white;
+.header, .footer { /*Default styling which will be persistent for header and footer */
     padding: 1rem;
     text-align: center;
     position: sticky;
