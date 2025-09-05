@@ -62,6 +62,7 @@ gap: 10px;
 .centered-paragraph { /*Text element in the first row to be centered, isn't right now, its sitting in the first row first column, instead of first row second column*/
     justify-self: center;
     text-align: center;
+    grid-column:2/ span 1;
 }
 
 
