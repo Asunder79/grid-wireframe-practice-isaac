@@ -3,7 +3,7 @@
 body{
 display:grid; /*Main display which contains the article and all wrappers*/
 grid-template-columns: 1fr;
-grid-template-rows: repeat(5, 1fr); /*Five rows, for at the most narrow displays, it should have five rows for all five children*/
+grid-template-rows: repeat(3, 1fr); /*three rows, for at the most narrow displays, it should have five rows for all five children*/
 gap: 10px;
 }
 /*Grandchildren will be handled by the childrens own grid displays, rows and columns*/
@@ -33,6 +33,7 @@ gap: 10px;
     grid-template-columns: 1fr;
     gap: 1rem;
     padding: 1rem;
+    background-color:blueviolet
 }
 
 .main-content { /*Contains content-item and its wrapper, and the paragraph element*/
@@ -42,6 +43,7 @@ gap: 10px;
     gap: 1rem;
     background-color:aquamarine;
     justify-content:center;
+    grid-template-areas: "Article content-item-container";
 }
 
 .aside{
@@ -71,7 +73,28 @@ gap: 10px;
     padding: 1rem;
     border-radius: 8px;
     text-align: center;
-    width:20%;
+    width:85%;
+    
+}
+
+/*gridlayout for the main-content and its subwrapper*/
+ .main-content {
+    display: grid;
+    grid-template-columns: auto 1fr; 
+    gap: 1rem;
+}
+
+.content-item-container { /*Secondary wrapper, to put each content-item in its own column in the same row.*/
+    display: grid; 
+     grid-template-rows: repeat(3, 1fr); /*Create three columns, each 1 fractional unit */
+     gap: 1rem; 
+    /* background-color:darkgreen; */
+    grid-row:2/3;
+    grid-column:1/4;
+} 
+.articleparagraph{
+    grid-column:2/3;
+    grid-row:1/2;
 }
 
 @media (min-width: 768px) { 
@@ -89,24 +112,17 @@ gap: 10px;
     .main-content {
         grid-area: main-content;
         display: grid;
-        grid-template-rows: auto 1fr; /*Create a second row to its default one child row, its height is automatically determined */
+        grid-template-rows: repeat(2,1fr); /*Create a second row to its default one child row, its height is automatically determined */
         gap: 1rem;
     }
     
     .aside-2 {
         grid-area: aside-2;
     }
-}
-
-/*gridlayout for the main-content and its subwrapper*/
-.main-content {
-    display: grid;
-    grid-template-rows: auto 1fr; 
-    gap: 1rem;
-}
-
 .content-item-container { /*Secondary wrapper, to put each content-item in its own column in the same row.*/
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /*Create three columns, each 1 fractional unit */
-    gap: 1rem;
+    display: grid; 
+     grid-template-columns: repeat(3, 1fr); /*Create three columns, each 1 fractional unit */
+     gap: 1rem; } 
+
 }
+
